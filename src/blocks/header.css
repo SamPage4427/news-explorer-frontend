@@ -1,48 +1,6 @@
 .header {
-  display: flex;
-  justify-content: space-between;
   padding: 30px 104px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 30%);
-}
-
-.header__name {
-  color: var(--main-white, #fff);
-  font-family: "Roboto Slab";
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.header__button-container {
-  display: flex;
-}
-
-.header__home {
-  color: var(--main-white, #fff);
-  text-align: center;
-  font-family: "Roboto";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.2;
-  border: none;
-  background: transparent;
-  border-bottom: 2px solid var(--main-white, #fff);
-  margin-right: 21px;
-}
-
-.header__profile {
-  color: var(--main-white, #fff);
-  font-family: "Roboto Slab";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.2;
-  width: 176px;
-  height: 48px;
-  border: 1px solid var(--main-white, #fff);
-  border-radius: 100px;
-  background: transparent;
-  margin-left: 21px;
 }
 
 @media screen and (min-width: 420px) and (max-width: 768px) {

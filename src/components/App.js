@@ -6,12 +6,12 @@ import { Route } from "react-router-dom";
 
 // components
 import Main from "./Main.js";
-import About from "./About.js";
-import Footer from "./Footer.js";
 import SigninModal from "./SigninModal.js";
 
 // contexts
 import CurrentUserContext from "../contexts/CurrentUserContext.js";
+import SignupModal from "./SignupModal.js";
+import SuccessModal from "./SuccessModal.js";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -26,11 +26,32 @@ function App() {
     setActiveModal("");
   };
 
-  const handleAltClick = () => {};
+  const handleAltClick = () => {
+    if (activeModal === "signin") {
+      handleCloseModal();
+      handleOpenModal("signup");
+    }
+    if (activeModal === "signup") {
+      handleCloseModal();
+      handleOpenModal("signin");
+    }
+  };
+
+  const handleSuccessModalClick = () => {
+    handleCloseModal();
+    handleOpenModal("signin");
+  };
 
   const handleSigninModal = () => handleOpenModal("signin");
 
+  const handleSignupModal = () => handleOpenModal("signup");
+
   function handleSignin() {}
+  function handleSignup() {
+    // if (!user) {
+    //   handleOpenModal("success");
+    // }
+  }
 
   useEffect(() => {
     if (!activeModal) return;
@@ -42,14 +63,27 @@ function App() {
         <Route exact path="/">
           <Main signinClick={handleSigninModal} />
         </Route>
-        <About />
-        <Footer />
         {activeModal === "signin" && (
           <SigninModal
             isOpen={handleSigninModal}
             onSignin={handleSignin}
             handleClose={handleCloseModal}
             onAltClick={handleAltClick}
+          />
+        )}
+        {activeModal === "signup" && (
+          <SignupModal
+            isOpen={handleSignupModal}
+            onSignup={handleSignup}
+            handleClose={handleCloseModal}
+            onAltClick={handleAltClick}
+          />
+        )}
+        {activeModal === "success" && (
+          <SuccessModal
+            name="success"
+            onClose={handleCloseModal}
+            onClick={handleSuccessModalClick}
           />
         )}
       </CurrentUserContext.Provider>

@@ -1,12 +1,35 @@
+import { useState, useEffect } from "react";
 import ModalWithForm from "./ModalWithForm";
 
-function SignupModal({ onSubmit, onAltClick }) {
+function SignupModal({ isOpen, onSignup, handleClose, onAltClick }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleUsernameChange = (e) => setUsername(e.target.value);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onSignup({ email, password, username });
+  }
+
+  useEffect(() => {
+    if (isOpen) {
+      setEmail("");
+      setPassword("");
+      setUsername("");
+    }
+  }, [isOpen]);
+
   return (
     <ModalWithForm
       name="signup"
       title="Sign Up"
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
       handleAltClick={onAltClick}
+      onClose={handleClose}
       buttonText="Sign up"
       altButtonText="Sign in"
     >
@@ -16,7 +39,7 @@ function SignupModal({ onSubmit, onAltClick }) {
           className="modal__input"
           id="email-input"
           type="email"
-          placeholder="Email"
+          placeholder="Enter Email"
           value={email}
           onChange={handleEmailChange}
           required
@@ -29,7 +52,7 @@ function SignupModal({ onSubmit, onAltClick }) {
           className="modal__input"
           id="password-input"
           type="text"
-          placeholder="Password"
+          placeholder="Enter Password"
           value={password}
           onChange={handlePasswordChange}
           required
@@ -42,7 +65,7 @@ function SignupModal({ onSubmit, onAltClick }) {
           className="modal__input"
           id="username-input"
           type="text"
-          placeholder="Username"
+          placeholder="Enter your Username"
           value={username}
           onChange={handleUsernameChange}
           required

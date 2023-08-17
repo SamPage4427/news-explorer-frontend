@@ -1,5 +1,6 @@
 import Header from "./Header.js";
-import SearchBar from "./SearchBar.js";
+import NewsCardList from "./NewsCardList.js";
+import SearchForm from "./SearchForm.js";
 import About from "./About.js";
 import Footer from "./Footer.js";
 
@@ -13,9 +14,14 @@ function Main({ signinClick }) {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <SearchBar />
+        <SearchForm />
       </div>
-      <div className="main__results"></div>
+      <div className="main__results">
+        <h3 className="main__results-title">Search Results</h3>
+        <NewsCardList />
+      </div>
+      <About />
+      <Footer />
     </div>
   );
 }

@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 
 function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    if (isOpen) {
+      setEmail("");
+      setPassword("");
+    }
+  }, [isOpen]);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -13,7 +20,10 @@ function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSignin({ email, password });
+  };
 
   return (
     <ModalWithForm
@@ -31,7 +41,7 @@ function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
           className="modal__input"
           id="email-input"
           type="email"
-          placeholder="Email"
+          placeholder="Enter Email"
           value={email}
           onChange={handleEmailChange}
           required
@@ -44,7 +54,7 @@ function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
           className="modal__input"
           id="password-input"
           type="text"
-          placeholder="Password"
+          placeholder="Enter Password"
           value={password}
           onChange={handlePasswordChange}
           required
