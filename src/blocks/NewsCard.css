@@ -83,4 +83,28 @@
   height: 40px;
   border: none;
   border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card__save:hover {
+  background: #fff url("../images/bookmark-hover.png") center no-repeat;
+}
+
+.card__save_active {
+  background: #fff url("../images/bookmark-checked.png") center no-repeat;
+}
+
+.card__delete {
+  background: #fff url("../images/trash.png") center no-repeat;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card__delete:hover {
+  background: #fff url("../images/trash-hover.png") center no-repeat;
 }

@@ -4,7 +4,7 @@ function SearchForm() {
   };
 
   return (
-    <div className="search">
+    <div className="search__container">
       <form className="search__form" onSubmit={handleSubmit}>
         <input
           className="search__input"
