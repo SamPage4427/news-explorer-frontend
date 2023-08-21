@@ -46,3 +46,27 @@ export const newsOptions = [
       "Humans have long relied on the starry sky to push into new frontiers, sail to the very edge of the world and find their way back home again. Even animals look to the stars to guide them.",
   },
 ];
+
+export const apiKey = "b0eb38bc69d447e4a6c7a94428857c81";
+export const currentDate = new Date().toLocaleString("default", {
+  month: "2-digit",
+  day: "2-digit",
+  year: "numeric",
+});
+
+const lastWeek = new Date();
+export const getPreviousWeek = () => {
+  lastWeek.setDate(lastWeek.getDate() - 7);
+  return lastWeek.toLocaleString("default", {
+    month: "2-digit",
+    day: "2-digit",
+    year: "numeric",
+  });
+};
+
+export const checkResponse = (res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error: ${res.error}`);
+};
