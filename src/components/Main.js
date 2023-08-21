@@ -8,7 +8,6 @@ function Main({ signinClick, handleSearch }) {
     <div className="main">
       <Header name="nav" onClick={signinClick} handleSearch={handleSearch} />
       <div className="main__results">
-        <h3 className="main__results-title">Search Results</h3>
         <NewsCardList />
       </div>
       <About />
