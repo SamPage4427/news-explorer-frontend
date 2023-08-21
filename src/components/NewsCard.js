@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import CurrentPageContext from "../contexts/CurrentPageContext.js";
+
 function NewsCard({ newsItem }) {
-  const currentPage = "/";
+  const { currentPage } = useContext(CurrentPageContext);
+
   return (
     <div className="card__container">
       <img
@@ -20,6 +24,11 @@ function NewsCard({ newsItem }) {
           <button className="card__save" type="button"></button>
         )}
       </div>
+      {currentPage === "/saved-news" ? (
+        <div className="card__keyword">keyword</div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

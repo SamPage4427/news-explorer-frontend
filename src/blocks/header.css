@@ -7,23 +7,4 @@
   .header {
     padding: 23px 40px 0;
   }
-
-  .header__name {
-    font-size: 20px;
-    line-height: 1.2;
-  }
-
-  .header__home {
-    font-size: 16px;
-    line-height: 1.2;
-    margin-right: 8px;
-  }
-
-  .header__profile {
-    width: 152px;
-    height: 40px;
-    font-size: 16px;
-    line-height: 1.2;
-    margin-left: 8px;
-  }
 }

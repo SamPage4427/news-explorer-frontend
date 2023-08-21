@@ -6,7 +6,7 @@ function NewsCardList() {
     <div className="card__section">
       <h3 className="card__section-title">Search Results</h3>
       {newsOptions.map((news) => {
-        return <NewsCard key={news.key} newsItem={news} />;
+        return <NewsCard key={news} newsItem={news} />;
       })}
     </div>
   );

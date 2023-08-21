@@ -1,11 +1,7 @@
-function SearchForm() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
+function SearchForm({ handleSearch }) {
   return (
     <div className="search">
-      <form className="search__form" onSubmit={handleSubmit}>
+      <form className="search__form" onSubmit={handleSearch}>
         <input
           className="search__input"
           type="text"
