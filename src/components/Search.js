@@ -1,6 +1,6 @@
 import SearchForm from "./SearchForm.js";
 
-function Search() {
+function Search({ handleSearch }) {
   return (
     <div className="search">
       <h2 className="search__title">What's going on in the world?</h2>
@@ -8,7 +8,7 @@ function Search() {
         Find the latest news on any topic and save them in your personal
         account.
       </p>
-      <SearchForm />
+      <SearchForm handleSearch={handleSearch} />
     </div>
   );
 }

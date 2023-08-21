@@ -15,10 +15,12 @@ import SuccessModal from "./SuccessModal.js";
 // contexts
 import CurrentUserContext from "../contexts/CurrentUserContext.js";
 import CurrentPageContext from "../contexts/CurrentPageContext.js";
+import SearchResultContext from "../contexts/SearchResultsContext.js";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
   const [activeModal, setActiveModal] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [currentPage, setCurrentPage] = useState("");
   const location = useLocation();
@@ -46,6 +48,10 @@ function App() {
     }
   };
 
+  const handleNewsSearch = (input) => {
+    setSearchResults(input);
+  };
+
   const handleSuccessModalClick = () => {
     handleCloseModal();
     handleOpenModal("signin");
@@ -70,35 +76,40 @@ function App() {
     <div className="page">
       <CurrentPageContext.Provider value={{ currentPage }}>
         <CurrentUserContext.Provider value={{ currentUser, isLoggedIn }}>
-          <Route exact path="/">
-            <Main signinClick={handleSigninModal} />
-          </Route>
-          <Route path="/saved-news">
-            <SavedNews />
-          </Route>
-          {activeModal === "signin" && (
-            <SigninModal
-              isOpen={handleSigninModal}
-              onSignin={handleSignin}
-              handleClose={handleCloseModal}
-              onAltClick={handleAltClick}
-            />
-          )}
-          {activeModal === "signup" && (
-            <SignupModal
-              isOpen={handleSignupModal}
-              onSignup={handleSignup}
-              handleClose={handleCloseModal}
-              onAltClick={handleAltClick}
-            />
-          )}
-          {activeModal === "success" && (
-            <SuccessModal
-              name="success"
-              onClose={handleCloseModal}
-              onClick={handleSuccessModalClick}
-            />
-          )}
+          <SearchResultContext.Provider value={{ searchResults }}>
+            <Route exact path="/">
+              <Main
+                signinClick={handleSigninModal}
+                handleSearch={handleNewsSearch}
+              />
+            </Route>
+            <Route path="/saved-news">
+              <SavedNews />
+            </Route>
+            {activeModal === "signin" && (
+              <SigninModal
+                isOpen={handleSigninModal}
+                onSignin={handleSignin}
+                handleClose={handleCloseModal}
+                onAltClick={handleAltClick}
+              />
+            )}
+            {activeModal === "signup" && (
+              <SignupModal
+                isOpen={handleSignupModal}
+                onSignup={handleSignup}
+                handleClose={handleCloseModal}
+                onAltClick={handleAltClick}
+              />
+            )}
+            {activeModal === "success" && (
+              <SuccessModal
+                name="success"
+                onClose={handleCloseModal}
+                onClick={handleSuccessModalClick}
+              />
+            )}
+          </SearchResultContext.Provider>
         </CurrentUserContext.Provider>
       </CurrentPageContext.Provider>
     </div>
