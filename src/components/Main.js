@@ -17,7 +17,6 @@ function Main({ signinClick }) {
         <SearchForm />
       </div>
       <div className="main__results">
-        <h3 className="main__results-title">Search Results</h3>
         <NewsCardList />
       </div>
       <About />
