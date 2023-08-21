@@ -1,0 +1,109 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__container {
+  position: relative;
+  background-color: #fff;
+  padding: 34px 46px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.modal__title {
+  color: var(--main-primary, #1a1b22);
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.modal__close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: transparent url("../images/close.png") center no-repeat;
+  width: 14px;
+  height: 14px;
+  border: none;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.modal__label {
+  color: #2f71e5;
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.modal__input {
+  width: 358px;
+  border: none;
+  border-bottom: 1px solid #000;
+  color: #000;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.modal__btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__submit-btn {
+  border-radius: 100px;
+  margin-top: 39px;
+  margin-bottom: 16px;
+  background: var(--simulator-gray-selected, #e6e8eb);
+  width: 358px;
+  height: 64px;
+  color: var(--simulator-gray-text, #b6bcbf);
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.modal__alt-btn {
+  color: #000;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.modal__alt-text {
+  color: #2f71e5;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.modal__signin-btn {
+  color: #2f71e5;
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+}
