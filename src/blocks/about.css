@@ -1,6 +1,7 @@
 .about {
   display: flex;
-  margin: 80px 104px;
+  padding: 80px 104px;
+  background: #fff;
 }
 
 .about__image {

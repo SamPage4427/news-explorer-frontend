@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import { useContext } from "react";
 import CurrentPageContext from "../contexts/CurrentPageContext.js";
 
-function Navigation({ onClick }) {
+function Navigation({ onSigninClick, onSignoutClick }) {
   const { currentPage } = useContext(CurrentPageContext);
   const isLoggedIn = true;
   const currentUser = "Sam";
@@ -28,7 +28,11 @@ function Navigation({ onClick }) {
             </div>
             <div className="nav__profile_signed-in">
               <h2 className="nav__username">{currentUser}</h2>
-              <button className="nav__logout" type="button" />
+              <button
+                className="nav__logout"
+                type="button"
+                onClick={onSignoutClick}
+              />
             </div>
           </div>
         </div>
@@ -51,7 +55,11 @@ function Navigation({ onClick }) {
             </div>
             <div className="nav__profile_dark">
               <h2 className="nav__username_dark">{currentUser}</h2>
-              <button className="nav__logout_dark" type="button" />
+              <button
+                className="nav__logout_dark"
+                type="button"
+                onClick={onSignoutClick}
+              />
             </div>
           </div>
         </div>
@@ -67,7 +75,11 @@ function Navigation({ onClick }) {
               </NavLink>
               <span className="nav__underline"></span>
             </div>
-            <button className="nav__profile" type="button" onClick={onClick}>
+            <button
+              className="nav__profile"
+              type="button"
+              onClick={onSigninClick}
+            >
               Sign In
             </button>
           </div>

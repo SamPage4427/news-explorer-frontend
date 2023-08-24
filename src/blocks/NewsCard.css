@@ -1,3 +1,18 @@
+.card__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__results-title {
+  color: var(--main-primary, #1a1b22);
+  font-family: "Roboto Slab";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 40px 0 64px;
+}
+
 .card__section {
   display: flex;
   flex-wrap: wrap;
@@ -5,16 +20,22 @@
   margin: 0 104px 80px;
 }
 
-.card__section-title {
-  color: var(--main-primary, #1a1b22);
-  font-family: "Roboto Slab";
-  font-size: 40px;
-  font-weight: 400;
+.card__show-more {
+  width: 288px;
+  height: 64px;
+  border: none;
+  border-radius: 80px;
+  background: #fff;
+  color: #1a1b22;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
   line-height: 1.2;
-  margin: 80px 0 64px 104px;
+  margin-bottom: 80px;
 }
 
-.card__container {
+.card {
   position: relative;
   width: 400px;
   height: 576px;
@@ -52,6 +73,11 @@
   font-weight: 400;
   line-height: 1.2;
   margin: 0 24px 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__description {
@@ -116,4 +142,39 @@
 
 .card__delete:hover {
   background: #fff url("../images/trash-hover.png") center no-repeat;
+}
+
+.card__not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__image_not-found {
+  background: transparent url("../images/not-found_v1.png") center no-repeat;
+  width: 82.5px;
+  height: 82.5px;
+  border: none;
+  margin-bottom: 32px;
+  margin-top: 86px;
+}
+
+.card__title_not-found {
+  color: #1a1b22;
+  text-align: center;
+  font-family: "Roboto Slab";
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.card__description_not-found {
+  color: #b6bcbf;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 80px;
 }

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 80px;
 }
 
 .search__title {
@@ -12,7 +13,7 @@
   line-height: 1.2;
   width: 608px;
   height: 128px;
-  margin-bottom: 24px;
+  margin: 80px 416px 32px;
 }
 
 .search__explaination {
@@ -22,17 +23,17 @@
   font-weight: 400;
   line-height: 1.2;
   width: 608px;
+  margin: 0 416px 88px;
 }
 
-.search__container {
+.search__form {
   display: flex;
-  width: 608px;
-  height: 64px;
+  justify-content: center;
+  align-items: center;
 }
 
 .search__input {
   position: absolute;
-  top: 352px;
   right: 416px;
   color: #000;
   width: 608px;
@@ -44,7 +45,6 @@
   border-radius: 100px;
   border: none;
   text-indent: 24px;
-  margin-bottom: 80px;
 }
 
 .search__button {

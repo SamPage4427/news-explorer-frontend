@@ -1,6 +1,8 @@
 .header {
   padding: 30px 104px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 30%);
+  max-height: 576px;
+  background: transparent url("../images/georgia-de-lotz--unsplash.png")
+    no-repeat;
 }
 
 @media screen and (min-width: 420px) and (max-width: 768px) {
