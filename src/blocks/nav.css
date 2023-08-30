@@ -6,6 +6,14 @@
   border-bottom: 1px solid rgba(255, 255, 255, 30%);
 }
 
+.nav__dark {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 30%);
+}
+
 .nav__link {
   text-decoration: none;
 }
@@ -18,6 +26,7 @@
   line-height: 1.2;
   margin: 0 0 26px;
   cursor: pointer;
+  justify-self: center;
 }
 
 .nav__title_dark {
@@ -28,6 +37,22 @@
   line-height: 1.2;
   margin: 0 0 26px;
   cursor: pointer;
+}
+
+.nav__mobile {
+  background: transparent url("../images/menu.svg") center no-repeat;
+  width: 24px;
+  height: 24px;
+  border: none;
+  display: none;
+}
+
+.nav__mobile-dark {
+  background: transparent url("../images/menu-dark.svg") center no-repeat;
+  width: 24px;
+  height: 24px;
+  border: none;
+  display: none;
 }
 
 .nav__button-container {
@@ -150,6 +175,7 @@
   background: transparent;
   margin-left: 21px;
   margin-bottom: 13px;
+  cursor: pointer;
 }
 
 .nav__profile_dark {
@@ -163,6 +189,7 @@
   background: transparent;
   margin-left: 21px;
   margin-bottom: 13px;
+  cursor: pointer;
 }
 
 .nav__username {
@@ -182,30 +209,38 @@
 }
 
 .nav__logout {
-  background: transparent url("../images/logout.png") center no-repeat;
   width: 24px;
   height: 24px;
   border: none;
-  cursor: pointer;
 }
 
-.nav__logout_dark {
-  background: transparent url("../images/logout-saved.svg") center no-repeat;
-  width: 24px;
-  height: 24px;
-  border: none;
-  cursor: pointer;
-}
+@media screen and (max-width: 768px) {
+  .nav {
+    height: 66px;
+  }
 
-@media screen and (min-width: 420px) and (max-width: 768px) {
+  .nav__dark {
+    height: 66px;
+  }
+
   .nav__title {
     font-size: 20px;
-    line-height: 1.2;
   }
 
   .nav__home {
     font-size: 16px;
-    line-height: 1.2;
+  }
+
+  .nav__home-container {
+    margin-right: 8px;
+  }
+
+  .nav__saved {
+    font-size: 16px;
+  }
+
+  .nav__saved-container {
+    margin-left: 8px;
     margin-right: 8px;
   }
 
@@ -213,7 +248,44 @@
     width: 152px;
     height: 40px;
     font-size: 16px;
-    line-height: 1.2;
     margin-left: 8px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .nav {
+    height: 56px;
+  }
+
+  .nav__dark {
+    height: 56px;
+  }
+
+  .nav__title {
+    font-size: 16px;
+    margin: 16px 16px;
+  }
+
+  .nav__title_dark {
+    font-size: 16px;
+    margin: 16px 16px;
+  }
+
+  .nav__mobile {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+  }
+
+  .nav__mobile-dark {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+  }
+
+  .nav__container_hidden {
+    display: none;
   }
 }

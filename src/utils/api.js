@@ -21,10 +21,21 @@ function saveNews(card, token) {
       title: card.title,
       description: card.description,
       url: card.url,
-      publishedAt: card.publishedAt.slice(0, 10),
+      publishedAt: card.publishedAt,
       source: card.source.name,
       image: card.urlToImage,
       keywords: card.keywords,
+      save: card.save,
     }),
   }).then(checkResponse);
+}
+
+function deleteSave(card, token) {
+  return fetch(`${baseUrl}/articles/saved`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  });
 }

@@ -1,18 +1,18 @@
 function About() {
   return (
     <div className="about">
-      <img className="about__image" />
+      <img className="about__image" alt="Sam" />
       <div className="about__container">
         <h2 className="about__title">About the Author</h2>
         <p className="about__description">
-          My name is Sam Page. I am a Fullstack Developer versed in ReactJS,
-          JavaScript, HTML, CSS, NodeJS, Webpack, ExpressJS, MongoDB, and Google
-          Cloud Platform.
+          Sam Page is a Fullstack Developer versed in ReactJS, JavaScript, HTML,
+          CSS, NodeJS, Webpack, ExpressJS, MongoDB, and Google Cloud Platform.
         </p>
         <p className="about__description">
-          Throughout my experience with the TripleTen Software Developer
-          Certification Program, I learned how to utilize all the technologies
-          listed, quickly and effectively.
+          Throughout his work with the TripleTen Software Developer
+          Certification Program, he learned how to utilize all the technologies
+          listed, quickly and effectively while working on projects that
+          mimicked real-world projects.
         </p>
       </div>
     </div>

@@ -12,11 +12,7 @@ import Footer from "./Footer.js";
 import SigninModal from "./SigninModal.js";
 import SignupModal from "./SignupModal.js";
 import SuccessModal from "./SuccessModal.js";
-import {
-  ESC_KEYCODE,
-  currentDate,
-  getPreviousWeek,
-} from "../utils/constants.js";
+import { ESC_KEYCODE } from "../utils/constants.js";
 
 // contexts
 import CurrentUserContext from "../contexts/CurrentUserContext.js";
@@ -26,9 +22,11 @@ import HasSearchedContext from "../contexts/HasSearchedContext.js";
 import NewsSearchContext from "../contexts/NewsSearchContext.js";
 import IsLoadingContext from "../contexts/IsLoadingContext.js";
 import SavedCardsContext from "../contexts/SavedCardsContext.js";
+import MobileContext from "../contexts/MobileContext.js";
 
 // API
 import { getNews } from "../utils/NewsApi.js";
+import MobileMenu from "./MobileMenu";
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
@@ -40,14 +38,8 @@ function App() {
   const [keywords, setKeywords] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [saveCards, setSavedCards] = useState([]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-
-  console.log(currentDate);
-  console.log(getPreviousWeek());
-
-  useEffect(() => {
-    setCurrentPage(location.pathname);
-  }, [location.pathname]);
 
   const handleOpenModal = (modal) => {
     setActiveModal(modal);
@@ -71,14 +63,11 @@ function App() {
   const handleNewsSearch = (input) => {
     setIsLoading(true);
     const searchNews = getNews(input);
-    searchNews
-      .then((data) => {
-        setHasSearched(true);
-        setSearchResults(data.articles);
-        console.log(data.articles);
-        setIsLoading(false);
-      })
-      .then(console.log(searchResults));
+    searchNews.then((data) => {
+      setHasSearched(true);
+      setSearchResults(data.articles);
+      setIsLoading(false);
+    });
   };
 
   const handleSuccessModalClick = () => {
@@ -101,6 +90,23 @@ function App() {
     setLoggedIn(false);
     setCurrentPage("/");
   }
+
+  const openMobileMenu = () => {
+    setMobileMenuOpen(true);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
+  const handleMobileMenuOverlay = () => {
+    handleSigninModal();
+    closeMobileMenu();
+  };
+
+  useEffect(() => {
+    setCurrentPage(location.pathname);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!activeModal) return;
@@ -128,39 +134,52 @@ function App() {
                   <SavedCardsContext.Provider
                     value={{ saveCards, setSavedCards }}
                   >
-                    <Route exact path="/">
-                      <Main
-                        signinClick={handleSigninModal}
-                        signoutClick={handleSignout}
-                      />
-                    </Route>
-                    <Route path="/saved-news">
-                      <SavedNews />
-                    </Route>
-                    <Footer />
-                    {activeModal === "signin" && (
-                      <SigninModal
-                        isOpen={handleSigninModal}
-                        onSignin={handleSignin}
-                        handleClose={handleCloseModal}
-                        onAltClick={handleAltClick}
-                      />
-                    )}
-                    {activeModal === "signup" && (
-                      <SignupModal
-                        isOpen={handleSignupModal}
-                        onSignup={handleSignup}
-                        handleClose={handleCloseModal}
-                        onAltClick={handleAltClick}
-                      />
-                    )}
-                    {activeModal === "success" && (
-                      <SuccessModal
-                        name="success"
-                        onClose={handleCloseModal}
-                        onClick={handleSuccessModalClick}
-                      />
-                    )}
+                    <MobileContext.Provider
+                      value={{
+                        mobileMenuOpen,
+                        openMobileMenu,
+                      }}
+                    >
+                      <Route exact path="/">
+                        <Main
+                          signinClick={handleSigninModal}
+                          signoutClick={handleSignout}
+                        />
+                      </Route>
+                      <Route path="/saved-news">
+                        <SavedNews />
+                      </Route>
+                      <Footer />
+                      {activeModal === "signin" && (
+                        <SigninModal
+                          isOpen={handleSigninModal}
+                          onSignin={handleSignin}
+                          handleClose={handleCloseModal}
+                          onAltClick={handleAltClick}
+                        />
+                      )}
+                      {activeModal === "signup" && (
+                        <SignupModal
+                          isOpen={handleSignupModal}
+                          onSignup={handleSignup}
+                          handleClose={handleCloseModal}
+                          onAltClick={handleAltClick}
+                        />
+                      )}
+                      {activeModal === "success" && (
+                        <SuccessModal
+                          name="success"
+                          onClose={handleCloseModal}
+                          onClick={handleSuccessModalClick}
+                        />
+                      )}
+                      {mobileMenuOpen && (
+                        <MobileMenu
+                          onClose={closeMobileMenu}
+                          onSigninClick={handleMobileMenuOverlay}
+                        />
+                      )}
+                    </MobileContext.Provider>
                   </SavedCardsContext.Provider>
                 </HasSearchedContext.Provider>
               </SearchResultContext.Provider>

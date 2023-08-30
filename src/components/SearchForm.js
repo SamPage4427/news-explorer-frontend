@@ -5,17 +5,19 @@ import HasSearchedContext from "../contexts/HasSearchedContext";
 function SearchForm() {
   const { handleNewsSearch } = useContext(NewsSearchContext);
   const { setHasSearched } = useContext(HasSearchedContext);
-  const [search, setSearch] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [keywords, setKeywords] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleNewsSearch(search);
+    handleNewsSearch(searchInput);
     setHasSearched(true);
-    setSearch("");
+    setKeywords(searchInput);
+    setSearchInput("");
   };
 
   const handleInputChange = (e) => {
-    setSearch(e.target.value);
+    setSearchInput(e.target.value);
   };
 
   return (
@@ -27,7 +29,6 @@ function SearchForm() {
         minLength={2}
         maxLength={30}
         onChange={handleInputChange}
-        value={search}
       />
       <button className="search__button" type="submit">
         Search

@@ -11,6 +11,11 @@
 .footer__copyright {
   display: flex;
   align-items: center;
+  color: #b6bcbf;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 .footer__socials {
@@ -26,6 +31,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
+  cursor: pointer;
 }
 
 .footer__tripleten {
@@ -37,6 +43,7 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
+  cursor: pointer;
 }
 
 .footer__github {
@@ -45,6 +52,7 @@
   background: transparent url("../images/github.png") center no-repeat;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 .footer__facebook {
@@ -52,8 +60,98 @@
   background: transparent url("../images/fb.png") center no-repeat;
   width: 24px;
   height: 24px;
+  cursor: pointer;
 }
 
 .footer__link {
   text-decoration: none;
+}
+
+#home {
+  grid-area: home;
+}
+
+#tripleten {
+  grid-area: tripleten;
+}
+
+#github {
+  grid-area: github;
+}
+
+#facebook {
+  grid-area: facebook;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 0 20px 0 40px;
+  }
+
+  .footer__home {
+    padding-right: 20px;
+  }
+
+  .footer__tripleten {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer__facebook {
+    padding-left: 20px;
+    padding-right: 12px;
+  }
+
+  .footer__github {
+    padding-left: 12px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .footer {
+    padding-left: 10px;
+    padding-right: 0;
+    display: grid;
+    grid-template-areas:
+      "socials"
+      "copyright";
+    padding-top: 20px;
+    height: 176px;
+    max-width: 320px;
+  }
+
+  .footer__copyright {
+    width: 288px;
+    grid-area: copyright;
+  }
+
+  .footer__socials {
+    grid-area: socials;
+    display: grid;
+    grid-template-areas:
+      "home github facebook"
+      "tripleten . .";
+  }
+
+  .footer__home {
+    padding: 0;
+    text-align: start;
+    width: 200px;
+  }
+
+  .footer__tripleten {
+    padding: 0;
+    text-align: start;
+    width: 200px;
+  }
+
+  .footer__github {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .footer__facebook {
+    padding: 0;
+    justify-content: center;
+  }
 }
