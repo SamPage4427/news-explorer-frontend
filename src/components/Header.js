@@ -1,10 +1,13 @@
 import Navigation from "./Navigation.js";
 import Search from "./Search.js";
 
-function Header({ onClick, handleSearch }) {
+function Header({ onSigninClick, onSignoutClick }) {
   return (
     <header className="header">
-      <Navigation onClick={onClick} onSearch={handleSearch} />
+      <Navigation
+        onSigninClick={onSigninClick}
+        onSignoutClick={onSignoutClick}
+      />
       <Search />
     </header>
   );

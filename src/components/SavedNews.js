@@ -1,13 +1,11 @@
 import SavedNewsHeader from "./SavedNewsHeader.js";
-import NewsCardList from "./NewsCardList.js";
-import Footer from "./Footer.js";
+import SavedNewsCardList from "./SavedNewsCardList.js";
 
 function SavedNews() {
   return (
     <div className="saved-news">
       <SavedNewsHeader />
-      <NewsCardList />
-      <Footer />
+      <SavedNewsCardList />
     </div>
   );
 }
