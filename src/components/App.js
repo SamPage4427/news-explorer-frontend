@@ -49,7 +49,10 @@ function App() {
   };
 
   const handleNewsSearch = (input) => {
-    setSearchResults(input);
+    const searchNews = getNews(input);
+    searchNews.then((data) => {
+      setSearchResults(data.articles);
+    });
   };
 
   const handleSuccessModalClick = () => {
