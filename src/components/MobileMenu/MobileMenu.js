@@ -19,7 +19,7 @@ function MobileMenu({ onClose, onSigninClick, onSignoutClick }) {
             <button className="mobile__close" onClick={onClose} />
           </div>
           <ul className="mobile__menu">
-            <li className="mobile__item">
+            <li className="mobile__menu-item">
               <NavLink to="/" className="nav__link">
                 <button className="mobile__home">Home</button>
               </NavLink>

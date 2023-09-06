@@ -8,7 +8,6 @@
 .mobile__container {
   background: #1a1b22;
   opacity: 1;
-  z-index: 90;
   height: 230px;
   width: 320px;
 }
@@ -16,7 +15,6 @@
 .mobile__container_signed-in {
   background: #1a1b22;
   opacity: 1;
-  z-index: 90;
   height: 300px;
   width: 320px;
 }
@@ -58,7 +56,7 @@
   padding: 0;
 }
 
-.mobile__item {
+.mobile__menu-item {
   width: 100%;
 }
 
@@ -139,4 +137,55 @@
   width: 24px;
   height: 24px;
   border: none;
+}
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  .mobile {
+    right: 0;
+    left: 0;
+  }
+
+  .mobile__container {
+    min-width: 320px;
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile__container_signed-in {
+    min-width: 320px;
+    max-width: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile__header {
+    min-width: 320px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .mobile__home {
+    min-width: 288px;
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .mobile__saved {
+    min-width: 288px;
+    max-width: 450px;
+  }
+
+  .mobile__profile {
+    width: 288px;
+  }
+
+  .mobile__profile_signed-in {
+    min-width: 140px;
+    max-width: 160px;
+  }
 }

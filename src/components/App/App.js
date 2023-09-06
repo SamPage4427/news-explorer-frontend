@@ -6,6 +6,7 @@ import { Route } from "react-router-dom";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 // components
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.js";
 import Main from "../Main/Main.js";
 import SavedNews from "../SavedNews/SavedNews.js";
 import Footer from "../Footer/Footer.js";
@@ -152,9 +153,9 @@ function App() {
                           signoutClick={handleSignout}
                         />
                       </Route>
-                      <Route path="/saved-news">
+                      <ProtectedRoute path="/saved-news">
                         <SavedNews />
-                      </Route>
+                      </ProtectedRoute>
                       <Footer />
                       {activeModal === "signin" && (
                         <SigninModal

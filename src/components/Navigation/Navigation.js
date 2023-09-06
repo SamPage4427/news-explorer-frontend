@@ -10,9 +10,6 @@ function Navigation({ onSigninClick, onSignoutClick }) {
   const { currentPage, activeModal } = useContext(CurrentPageContext);
   const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
   const { openMobileMenu } = useContext(MobileContext);
-
-  console.log(activeModal);
-
   return (
     <>
       {isLoggedIn && currentPage === "/" ? (

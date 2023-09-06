@@ -3,9 +3,16 @@
   background: transparent
     url("../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.svg") center
     no-repeat;
-  z-index: 0;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .header {
+    max-width: 1439px;
+    min-width: 1024px;
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -15,6 +22,11 @@
 }
 
 @media screen and (min-width: 481px) and (max-width: 767px) {
+  .header {
+    max-height: 400px;
+    min-width: 481px;
+    max-width: 767px;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
