@@ -13,7 +13,7 @@ function NewsCardList() {
   const [cardsVisible, setCardsVisible] = useState(3);
 
   return (
-    <section className="card__container">
+    <section className="card">
       {!isLoading && hasSearched && searchResults.length === 0 ? (
         <div className="card__not-found">
           <img

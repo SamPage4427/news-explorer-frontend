@@ -17,10 +17,11 @@ function NewsCard({ newsItem }) {
 
   const handleSaveCards = (e) => {
     // refer to likecards in react project
+    setSavedCards();
   };
 
   return (
-    <div className="card">
+    <div className="card__container">
       <img
         src={newsItem.urlToImage}
         alt={newsItem.url}

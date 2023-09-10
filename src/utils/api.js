@@ -39,3 +39,11 @@ function deleteSave(card, token) {
     },
   });
 }
+
+const Api = {
+  getSavedArticles,
+  saveNews,
+  deleteSave,
+};
+
+export default Api;

@@ -1,15 +1,13 @@
-// import CurrentUserContext from "../contexts/CurrentUserContext.js";
-import { useState } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext.js";
+// import { useState } from "react";
 import SavedCardsContext from "../../contexts/SavedCardsContext.js";
-import { newsOptions } from "../../utils/constants.js";
 import Navigation from "../Navigation/Navigation.js";
 import { useContext } from "react";
 
 function SavedNewsHeader() {
   const { saveCards } = useContext(SavedCardsContext);
-  // const { currentUser } = useContext(CurrentUserContext);
-  const currentUser = "Elise";
-  const [keywords, setKeywords] = useState([]);
+  const { currentUser } = useContext(CurrentUserContext);
+  // const [keywords, setKeywords] = useState([]);
 
   return (
     <div className="saved-news__header">

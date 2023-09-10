@@ -8,6 +8,8 @@ function SearchForm() {
   const [searchInput, setSearchInput] = useState("");
   const [keywords, setKeywords] = useState([]);
 
+  console.log(keywords);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     handleNewsSearch(searchInput);
