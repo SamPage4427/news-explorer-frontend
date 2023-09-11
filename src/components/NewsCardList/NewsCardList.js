@@ -29,7 +29,7 @@ function NewsCardList() {
       ) : !isLoading && hasSearched && searchResults?.length >= 1 ? (
         <>
           <h3 className="card__results-title">Search Results</h3>
-          <div className="card__section">
+          <div className="card__container">
             {searchResults?.slice(0, cardsVisible).map((news) => {
               return <NewsCard key={news.url} newsItem={news} />;
             })}

@@ -33,6 +33,10 @@
 
 .search__input {
   color: #000;
+  font-family: "Roboto", Arial;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
   width: 608px;
   min-width: 608px;
   height: 66px;

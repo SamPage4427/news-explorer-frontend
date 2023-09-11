@@ -143,11 +143,11 @@
 
 @media screen and (min-width: 680px) and (max-width: 767px) {
   .footer__copyright {
-    margin-left: 40px;
+    margin-left: 16px;
   }
 
   .footer__socials {
-    margin-right: 40px;
+    margin-right: 16px;
   }
 
   .footer__home {
