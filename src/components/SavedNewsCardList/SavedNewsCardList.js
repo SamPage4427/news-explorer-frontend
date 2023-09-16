@@ -7,8 +7,8 @@ function SavedNewsCardList() {
   // const { saveCards } = useContext(SavedCardsContext);
 
   return (
-    <section className="card">
-      <div className="card__container">
+    <section className="saved-news__card">
+      <div className="saved-news__card-container">
         {newsOptions.map((news) => {
           return <NewsCard key={news.url} newsItem={news} />;
         })}

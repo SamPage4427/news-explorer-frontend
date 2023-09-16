@@ -166,7 +166,7 @@
   justify-content: space-evenly;
   align-items: center;
   color: #fff;
-  font-family: "Roboto Slab", Arial;
+  font-family: "Roboto", Arial;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.2;
@@ -183,6 +183,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  color: #fff;
+  font-family: "Roboto", Arial;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
   width: 112px;
   height: 48px;
   border: 1px solid var(--main-white, #fff);
@@ -196,6 +201,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  color: #000;
+  font-family: "Roboto", Arial;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
   width: 112px;
   height: 48px;
   border: 1px solid #000;
@@ -229,11 +239,11 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .nav__title {
-    margin: 30px 0 26px 104px;
+    margin: 30px 0 26px 40px;
   }
 
   .nav__title_dark {
-    margin: 30px 0 26px 104px;
+    margin: 30px 0 26px 40px;
   }
 
   .nav__home {
@@ -270,19 +280,19 @@
   .nav__profile {
     width: 176px;
     height: 48px;
-    margin: 19px 104px 13px 42px;
+    margin: 19px 40px 13px 42px;
   }
 
   .nav__profile_signed-in {
     width: 112px;
     height: 48px;
-    margin: 19px 104px 13px 0;
+    margin: 19px 40px 13px 0;
   }
 
   .nav__profile_dark {
     width: 112px;
     height: 48px;
-    margin: 19px 104px 13px 0;
+    margin: 19px 40px 13px 0;
   }
 }
 

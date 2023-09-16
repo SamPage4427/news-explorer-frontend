@@ -1,6 +1,5 @@
 function ModalWithForm({
   children,
-  name,
   title,
   onSubmit,
   onClose,
@@ -10,7 +9,7 @@ function ModalWithForm({
   isDisabled,
 }) {
   return (
-    <div className={`modal modal__type_${name}`}>
+    <div className={`modal`}>
       <div className="modal__container">
         <h2 className="modal__title">{title}</h2>
         <button className="modal__close" type="button" onClick={onClose} />

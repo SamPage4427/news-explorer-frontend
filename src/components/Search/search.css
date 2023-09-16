@@ -1,8 +1,14 @@
 .search {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-bottom: 80px;
+}
+
+.search__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 80px 416px 88px;
 }
 
 .search__title {
@@ -13,7 +19,7 @@
   line-height: 1.2;
   width: 608px;
   height: 128px;
-  margin: 80px 416px 32px;
+  margin: 0 0 32px;
 }
 
 .search__explaination {
@@ -23,12 +29,13 @@
   font-weight: 400;
   line-height: 1.2;
   width: 608px;
-  margin: 0 416px 88px;
+  margin: 0;
 }
 
 .search__form {
   display: flex;
   max-width: 1440px;
+  width: 1425px;
 }
 
 .search__input {
@@ -89,7 +96,7 @@
   }
 
   .search__form {
-    width: 1361px;
+    width: 1348px;
   }
 
   .search__input {
@@ -115,7 +122,7 @@
   }
 
   .search__form {
-    width: 1261px;
+    width: 1246px;
   }
 
   .search__input {
@@ -144,16 +151,14 @@
     font-size: 36px;
     width: 385px;
     height: 80px;
-    margin: 30px 163px 16px;
   }
 
   .search__explaination {
     width: 452px;
-    margin: 0 160px 48px 156px;
   }
 
   .search__form {
-    width: 1124px;
+    width: 1109px;
   }
 
   .search__input {
@@ -178,20 +183,23 @@
     margin-bottom: 48px;
   }
 
+  .search__container {
+    margin: 30px 160px 48px;
+  }
+
   .search__title {
     font-size: 36px;
     width: 385px;
     height: 80px;
-    margin: 30px 163px 16px;
+    margin-bottom: 16px;
   }
 
   .search__explaination {
     width: 452px;
-    margin: 0 160px 48px 156px;
   }
 
   .search__form {
-    width: 1024px;
+    width: 1009px;
   }
 
   .search__input {
@@ -216,20 +224,23 @@
     margin-bottom: 48px;
   }
 
+  .search__container {
+    margin: 30px 160px 48px;
+  }
+
   .search__title {
     font-size: 36px;
     width: 385px;
     height: 80px;
-    margin: 30px 163px 16px;
+    margin-bottom: 16px;
   }
 
   .search__explaination {
     width: 452px;
-    margin: 0 160px 48px 156px;
   }
 
   .search__form {
-    width: 968px;
+    width: 953px;
   }
 
   .search__input {
@@ -253,20 +264,23 @@
     margin-bottom: 48px;
   }
 
+  .search__container {
+    margin: 30px 160px 48px;
+  }
+
   .search__title {
     font-size: 36px;
     width: 385px;
     height: 80px;
-    margin: 30px 163px 16px;
+    margin-bottom: 16px;
   }
 
   .search__explaination {
     width: 452px;
-    margin: 0 160px 48px 156px;
   }
 
   .search__form {
-    width: 868px;
+    width: 853px;
   }
 
   .search__input {
@@ -287,24 +301,26 @@
 
 @media screen and (min-width: 768px) and (max-width: 867px) {
   .search {
-    align-items: center;
     margin-bottom: 48px;
+  }
+
+  .search__container {
+    margin: 38px 160px 48px;
   }
 
   .search__title {
     font-size: 36px;
-    width: 385px;
+    width: 426px;
     height: 80px;
-    margin: 30px 163px 16px;
+    margin-bottom: 16px;
   }
 
   .search__explaination {
     width: 452px;
-    margin: 0 160px 48px 156px;
   }
 
   .search__form {
-    width: 768px;
+    width: 753px;
   }
 
   .search__input {
@@ -329,20 +345,23 @@
     margin-bottom: 48px;
   }
 
+  .search__container {
+    margin: 30px 160px 48px;
+  }
+
   .search__title {
     font-size: 36px;
     width: 385px;
     height: 80px;
-    margin: 30px 163px 16px;
+    margin-bottom: 16px;
   }
 
   .search__explaination {
     width: 452px;
-    margin: 0 160px 48px 156px;
   }
 
   .search__form {
-    width: 681px;
+    width: 667px;
   }
 
   .search__input {
@@ -367,20 +386,23 @@
     margin-bottom: 48px;
   }
 
+  .search__container {
+    margin: 30px 160px 48px;
+  }
+
   .search__title {
     font-size: 36px;
     width: 385px;
     height: 80px;
-    margin: 30px 163px 16px;
+    margin-bottom: 16px;
   }
 
   .search__explaination {
     width: 452px;
-    margin: 0 160px 48px 156px;
   }
 
   .search__form {
-    width: 580px;
+    width: 565px;
   }
 
   .search__input {
@@ -405,30 +427,34 @@
     margin-bottom: 48px;
   }
 
+  .search__container {
+    margin: 30px 16px 122px;
+  }
+
   .search__title {
     font-size: 36px;
     width: 285px;
     height: 80px;
-    margin: 30px 19px 16px;
+    margin-bottom: 16px;
   }
 
   .search__explaination {
     width: 288px;
     height: 72px;
-    margin: 0 19px 122px;
   }
 
   .search__form {
     display: flex;
     flex-direction: column;
+    width: 305px;
   }
 
   .search__input {
     width: 288px;
     min-width: 288px;
     height: 56px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 16px;
   }
 
@@ -436,6 +462,7 @@
     position: static;
     width: 288px;
     height: 56px;
-    margin-left: 16px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

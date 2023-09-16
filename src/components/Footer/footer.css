@@ -171,11 +171,13 @@
 
 @media screen and (min-width: 580px) and (max-width: 679px) {
   .footer__copyright {
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer__socials {
-    margin-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer__home {
@@ -204,7 +206,6 @@
       "socials"
       "copyright";
     height: 176px;
-    min-width: 320px;
     max-width: 579px;
     justify-content: center;
   }

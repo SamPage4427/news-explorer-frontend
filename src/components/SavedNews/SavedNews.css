@@ -37,9 +37,24 @@
   margin: 0 0 56px 104px;
 }
 
+.saved-news__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.saved-news__card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 64px 96px 80px;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .saved-news__title {
     font-size: 14px;
+    margin-left: 40px;
   }
 
   .saved-news__article-count {
@@ -49,23 +64,37 @@
 
   .saved-news__keywords {
     font-size: 18px;
+    margin-left: 40px;
+  }
+
+  .saved-news__card-container {
+    margin: 64px 38px 80px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .saved-news__title {
     font-size: 14px;
+    margin-top: 24px;
     margin-left: 40px;
+    margin-bottom: 16px;
   }
 
   .saved-news__article-count {
     font-size: 30px;
     margin-left: 40px;
+    margin-bottom: 16px;
   }
 
   .saved-news__keywords {
     font-size: 18px;
     margin-left: 40px;
+    margin-bottom: 32px;
+  }
+
+  .saved-news__card-container {
+    gap: 8px;
+    margin: 32px 40px;
   }
 }
 
@@ -75,18 +104,27 @@
   }
 
   .saved-news__title {
-    margin-left: 16px;
+    margin: 8px 0 16px 16px;
     width: 288px;
+    font-size: 12px;
   }
 
   .saved-news__article-count {
     margin-left: 16px;
     width: 288px;
+    font-size: 30px;
+    margin-bottom: 50px;
   }
 
   .saved-news__keywords {
     margin-left: 16px;
+    margin-bottom: 32px;
     width: 288px;
+  }
+
+  .saved-news__card-container {
+    gap: 8px;
+    margin: 24px 16px 13px;
   }
 }
 
@@ -96,17 +134,27 @@
   }
 
   .saved-news__title {
-    margin-left: 16px;
+    margin: 8px 0 16px 16px;
     width: 288px;
+    font-size: 12px;
   }
 
   .saved-news__article-count {
     margin-left: 16px;
     width: 288px;
+    font-size: 30px;
+    margin-bottom: 50px;
   }
 
   .saved-news__keywords {
     margin-left: 16px;
+    margin-bottom: 32px;
     width: 288px;
+  }
+
+  .saved-news__card-container {
+    gap: 8px;
+    justify-content: center;
+    margin: 24px 16px 13px;
   }
 }

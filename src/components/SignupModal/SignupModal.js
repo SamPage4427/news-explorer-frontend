@@ -25,7 +25,6 @@ function SignupModal({ isOpen, onSignup, handleClose, onAltClick }) {
 
   return (
     <ModalWithForm
-      name="signup"
       title="Sign Up"
       onSubmit={handleSubmit}
       handleAltClick={onAltClick}

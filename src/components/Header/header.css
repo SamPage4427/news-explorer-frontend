@@ -10,7 +10,6 @@
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
   .header {
     max-width: 1439px;
-    min-width: 1024px;
     justify-content: center;
   }
 }
@@ -24,7 +23,6 @@
 @media screen and (min-width: 580px) and (max-width: 767px) {
   .header {
     max-height: 400px;
-    min-width: 580px;
     max-width: 767px;
   }
 }
@@ -33,7 +31,6 @@
   .header {
     max-height: 536px;
     height: 536px;
-    min-width: 320px;
     max-width: 579px;
   }
 }
