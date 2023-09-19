@@ -245,6 +245,7 @@
 @media screen and (min-width: 1240px) and (max-width: 1339px) {
   .card__container {
     gap: 16px;
+    justify-content: center;
   }
 
   .card__show-more {
@@ -305,6 +306,7 @@
   .card__container {
     gap: 16px;
     margin: 32px 40px 32px;
+    justify-content: center;
   }
 
   .card__show-more {
@@ -367,6 +369,7 @@
   .card__container {
     gap: 16px;
     margin: 32px 40px 32px;
+    justify-content: center;
   }
 
   .card__show-more {
@@ -429,6 +432,7 @@
   .card__container {
     gap: 16px;
     margin: 32px 40px 32px;
+    justify-content: center;
   }
 
   .card__show-more {
@@ -492,6 +496,7 @@
   .card__container {
     gap: 16px;
     margin: 32px 82px 32px;
+    justify-content: center;
   }
 
   .card__show-more {
@@ -555,6 +560,7 @@
   .card__container {
     gap: 8px;
     margin: 24px 40px 16px;
+    justify-content: center;
   }
 
   .card__item {
@@ -620,6 +626,7 @@
   .card__container {
     gap: 8px;
     margin: 32px 40px 32px;
+    justify-content: center;
   }
 
   .card__show-more {
@@ -683,6 +690,7 @@
   .card__container {
     gap: 8px;
     margin: 32px 10px 32px;
+    justify-content: center;
   }
 
   .card__show-more {
@@ -745,6 +753,7 @@
 
   .card__container {
     margin: 24px 16px 16px;
+    justify-content: center;
   }
 
   .card__item {

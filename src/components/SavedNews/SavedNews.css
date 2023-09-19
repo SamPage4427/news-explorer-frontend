@@ -69,6 +69,7 @@
 
   .saved-news__card-container {
     margin: 64px 38px 80px;
+    justify-content: center;
   }
 }
 
@@ -95,6 +96,7 @@
   .saved-news__card-container {
     gap: 8px;
     margin: 32px 40px;
+    justify-content: center;
   }
 }
 
@@ -125,6 +127,7 @@
   .saved-news__card-container {
     gap: 8px;
     margin: 24px 16px 13px;
+    justify-content: center;
   }
 }
 

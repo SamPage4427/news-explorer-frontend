@@ -34,7 +34,7 @@ function Navigation({ onSigninClick, onSignoutClick }) {
                 <button className="nav__saved">Saved Articles</button>
               </NavLink>
             </div>
-            <button className="nav__profile_signed-in" onClick={onSignoutClick}>
+            <button className="nav__profile-signed-in" onClick={onSignoutClick}>
               <h2 className="nav__username">{currentUser}</h2>
               <img src={logout} className="nav__logout" alt="logout" />
             </button>
@@ -60,7 +60,7 @@ function Navigation({ onSigninClick, onSignoutClick }) {
               <NavLink to="/saved-news" className="nav__link">
                 <button className="nav__saved_dark">Saved Articles</button>
               </NavLink>
-              <span className="nav__underline_saved"></span>
+              <span className="nav__underline-saved"></span>
             </div>
             <button className="nav__profile_dark" onClick={onSignoutClick}>
               <h2 className="nav__username_dark">{currentUser}</h2>

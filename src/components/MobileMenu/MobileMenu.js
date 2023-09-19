@@ -11,27 +11,27 @@ function MobileMenu({ onClose, onSigninClick, onSignoutClick }) {
   return (
     <div className="mobile">
       {isLoggedIn && currentPage === "/" ? (
-        <div className="mobile__container_signed-in">
+        <div className="mobile__container-signed-in">
           <div className="mobile__header">
-            <NavLink to="/" className="nav__link">
+            <NavLink to="/" className="mobile__link">
               <h2 className="mobile__title">NewsExplorer</h2>
             </NavLink>
             <button className="mobile__close" onClick={onClose} />
           </div>
           <ul className="mobile__menu">
             <li className="mobile__menu-item">
-              <NavLink to="/" className="nav__link">
+              <NavLink to="/" className="mobile__link">
                 <button className="mobile__home">Home</button>
               </NavLink>
             </li>
             <li className="mobile__item">
-              <NavLink to="/saved-news" className="nav__link">
+              <NavLink to="/saved-news" className="mobile__link">
                 <button className="mobile__saved">Saved Articles</button>
               </NavLink>
             </li>
             <li className="mobile__item">
               <button
-                className="mobile__profile_signed-in"
+                className="mobile__profile-signed-in"
                 onClick={onSignoutClick}
               >
                 <h2 className="mobile__username">{currentUser}</h2>
@@ -41,27 +41,27 @@ function MobileMenu({ onClose, onSigninClick, onSignoutClick }) {
           </ul>
         </div>
       ) : isLoggedIn && currentPage === "/saved-news" ? (
-        <div className="mobile__container_signed-in">
+        <div className="mobile__container-signed-in">
           <div className="mobile__header">
-            <NavLink to="/" className="nav__link">
+            <NavLink to="/" className="mobile__link">
               <h2 className="mobile__title">NewsExplorer</h2>
             </NavLink>
             <button className="mobile__close" onClick={onClose} />
           </div>
           <ul className="mobile__menu">
             <li className="mobile__item">
-              <NavLink to="/" className="nav__link">
+              <NavLink to="/" className="mobile__link">
                 <button className="mobile__home">Home</button>
               </NavLink>
             </li>
             <li className="mobile__item">
-              <NavLink to="/saved-news" className="nav__link">
+              <NavLink to="/saved-news" className="mobile__link">
                 <button className="mobile__saved">Saved Articles</button>
               </NavLink>
             </li>
             <li className="mobile__item">
               <button
-                className="mobile__profile_signed-in"
+                className="mobile__profile-signed-in"
                 onClick={onSignoutClick}
               >
                 <h2 className="mobile__username">Sam</h2>
@@ -73,13 +73,13 @@ function MobileMenu({ onClose, onSigninClick, onSignoutClick }) {
       ) : (
         <div className="mobile__container">
           <div className="mobile__header">
-            <NavLink to="/" className="nav__link">
+            <NavLink to="/" className="mobile__link">
               <h2 className="mobile__title">NewsExplorer</h2>
             </NavLink>
             <button className="mobile__close" onClick={onClose} />
           </div>
           <ul className="mobile__menu">
-            <NavLink to="/" className="nav__link">
+            <NavLink to="/" className="mobile__link">
               <button className="mobile__home">Home</button>
             </NavLink>
             <button

@@ -13,3 +13,6 @@
 @import url("./components/Preloader/CirclePreloader.css");
 @import url("./components/MobileMenu/MobileMenu.css");
 @import url("./components/ModalWithForm/modal.css");
+/* * {
+  outline: 1px solid red;
+} */

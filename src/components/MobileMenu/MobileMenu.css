@@ -9,20 +9,24 @@
   background: #1a1b22;
   opacity: 1;
   height: 230px;
-  width: 320px;
+  max-width: 320px;
 }
 
-.mobile__container_signed-in {
+.mobile__container-signed-in {
   background: #1a1b22;
   opacity: 1;
   height: 300px;
-  width: 320px;
+  max-width: 320px;
+}
+
+.mobile__link {
+  text-decoration: none;
 }
 
 .mobile__header {
   display: flex;
   align-items: center;
-  width: 320px;
+  width: 305px;
   height: 56px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -65,7 +69,7 @@
 }
 
 .mobile__home {
-  width: 288px;
+  width: 272px;
   height: 56px;
   text-align: start;
   color: var(--main-white, #fff);
@@ -81,7 +85,7 @@
 }
 
 .mobile__saved {
-  width: 288px;
+  width: 272px;
   height: 56px;
   text-align: start;
   color: var(--main-white, #fff);
@@ -107,16 +111,17 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 1.2;
-  width: 288px;
+  width: 272px;
   height: 56px;
   border: 1px solid var(--main-white, #fff);
   border-radius: 100px;
   background: transparent;
   cursor: pointer;
   margin: 0 16px 24px;
+  padding: 0;
 }
 
-.mobile__profile_signed-in {
+.mobile__profile-signed-in {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -148,53 +153,41 @@
   border: none;
 }
 
-@media screen and (min-width: 321px) and (max-width: 480px) {
+@media screen and (min-width: 321px) and (max-width: 510px) {
   .mobile {
     right: 0;
     left: 0;
   }
 
   .mobile__container {
-    min-width: 320px;
-    max-width: 480px;
+    max-width: 510px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .mobile__container_signed-in {
-    min-width: 320px;
-    max-width: 480px;
-    width: 100%;
+  .mobile__container-signed-in {
+    max-width: 510px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .mobile__header {
-    min-width: 320px;
     width: 100%;
-    max-width: 480px;
+    max-width: 510px;
   }
 
   .mobile__home {
-    min-width: 288px;
     max-width: 450px;
-    width: 100%;
   }
 
   .mobile__saved {
-    min-width: 288px;
     max-width: 450px;
   }
 
-  .mobile__profile {
-    width: 288px;
-  }
-
-  .mobile__profile_signed-in {
-    min-width: 140px;
+  .mobile__profile-signed-in {
     max-width: 160px;
   }
 }
