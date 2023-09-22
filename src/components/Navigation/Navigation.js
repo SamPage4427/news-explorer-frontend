@@ -41,30 +41,39 @@ function Navigation({ onSigninClick, onSignoutClick }) {
           </div>
         </nav>
       ) : isLoggedIn && currentPage === "/saved-news" ? (
-        <nav className="nav__dark">
-          <NavLink to="/" className="nav__link">
-            <h1 className="nav__title_dark">NewsExplorer</h1>
+        <nav className="saved-news__nav">
+          <NavLink to="/" className="saved-news__nav-link">
+            <h1 className="saved-news__nav-title">NewsExplorer</h1>
           </NavLink>
           <button
-            className={"nav__mobile-dark"}
+            className={"saved-news__nav-mobile"}
             type="button"
             onClick={openMobileMenu}
           />
-          <div className="nav__button-container nav__button-container_hidden">
-            <div className="nav__home-container">
-              <NavLink to="/" className="nav__link">
-                <button className="nav__home_dark">Home</button>
+          <div className="saved-news__nav-button-container saved-news__nav-button-container_hidden">
+            <div className="saved-news__nav-home-container">
+              <NavLink to="/" className="saved-news__nav-link">
+                <button className="saved-news__nav-home">Home</button>
               </NavLink>
             </div>
-            <div className="nav__saved-container">
-              <NavLink to="/saved-news" className="nav__link">
-                <button className="nav__saved_dark">Saved Articles</button>
+            <div className="saved-news__nav-saved-container">
+              <NavLink to="/saved-news" className="saved-news__nav-link">
+                <button className="saved-news__nav-saved">
+                  Saved Articles
+                </button>
               </NavLink>
-              <span className="nav__underline-saved"></span>
+              <span className="saved-news__nav-underline"></span>
             </div>
-            <button className="nav__profile_dark" onClick={onSignoutClick}>
-              <h2 className="nav__username_dark">{currentUser}</h2>
-              <img src={logoutDark} className="nav__logout" alt="logout" />
+            <button
+              className="saved-news__nav-profile"
+              onClick={onSignoutClick}
+            >
+              <h2 className="saved-news__nav-username">{currentUser}</h2>
+              <img
+                src={logoutDark}
+                className="saved-news__nav-logout"
+                alt="logout"
+              />
             </button>
           </div>
         </nav>

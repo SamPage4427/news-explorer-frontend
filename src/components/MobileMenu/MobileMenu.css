@@ -9,14 +9,14 @@
   background: #1a1b22;
   opacity: 1;
   height: 230px;
-  max-width: 320px;
+  width: 320px;
 }
 
 .mobile__container-signed-in {
   background: #1a1b22;
   opacity: 1;
   height: 300px;
-  max-width: 320px;
+  width: 320px;
 }
 
 .mobile__link {
@@ -26,7 +26,7 @@
 .mobile__header {
   display: flex;
   align-items: center;
-  width: 305px;
+  width: 320px;
   height: 56px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -69,7 +69,7 @@
 }
 
 .mobile__home {
-  width: 272px;
+  width: 288px;
   height: 56px;
   text-align: start;
   color: var(--main-white, #fff);
@@ -85,7 +85,7 @@
 }
 
 .mobile__saved {
-  width: 272px;
+  width: 288px;
   height: 56px;
   text-align: start;
   color: var(--main-white, #fff);
@@ -169,6 +169,7 @@
 
   .mobile__container-signed-in {
     max-width: 510px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

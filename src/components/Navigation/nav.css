@@ -7,15 +7,6 @@
   max-height: 80px;
 }
 
-.nav__dark {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 30%);
-  max-height: 80px;
-}
-
 .nav__link {
   text-decoration: none;
 }
@@ -29,16 +20,6 @@
   margin: 30px 0 26px 104px;
   cursor: pointer;
   justify-self: center;
-}
-
-.nav__title_dark {
-  color: #000;
-  font-family: "Roboto Slab", Arial;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 30px 0 26px 104px;
-  cursor: pointer;
 }
 
 .nav__mobile {
@@ -87,24 +68,6 @@
   cursor: pointer;
 }
 
-.nav__home_dark {
-  color: #000;
-  width: 49px;
-  height: 24px;
-  text-align: center;
-  font-family: "Roboto", Arial;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.2;
-  border: none;
-  background: transparent;
-  margin-top: 30px;
-  margin-bottom: 26px;
-  padding: 0;
-  cursor: pointer;
-}
-
 .nav__underline {
   width: 70px;
   max-height: 3px;
@@ -134,31 +97,6 @@
   margin: 30px 64px 26px 76px;
   padding: 0;
   cursor: pointer;
-}
-
-.nav__saved_dark {
-  color: #000;
-  width: 114px;
-  height: 24px;
-  text-align: center;
-  font-family: "Roboto", Arial;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.2;
-  border: none;
-  white-space: nowrap;
-  background: transparent;
-  margin: 30px 64px 26px 76px;
-  padding: 0;
-  cursor: pointer;
-}
-
-.nav__underline-saved {
-  width: 178px;
-  height: 3px;
-  border-top: 3px solid #000;
-  background: transparent;
 }
 
 .nav__profile {
@@ -197,34 +135,8 @@
   cursor: pointer;
 }
 
-.nav__profile_dark {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  color: #000;
-  font-family: "Roboto", Arial;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.2;
-  width: 112px;
-  height: 48px;
-  border: 1px solid #000;
-  border-radius: 100px;
-  background: transparent;
-  margin: 19px 104px 13px 0;
-  cursor: pointer;
-}
-
 .nav__username {
   color: #fff;
-  font-family: "Roboto Slab", Arial;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-.nav__username_dark {
-  color: #000;
   font-family: "Roboto Slab", Arial;
   font-size: 18px;
   font-weight: 500;
@@ -365,16 +277,7 @@
     max-height: 66px;
   }
 
-  .nav__dark {
-    height: 66px;
-  }
-
   .nav__title {
-    font-size: 20px;
-    margin: 23px 0 18px 16px;
-  }
-
-  .nav__title_dark {
     font-size: 20px;
     margin: 23px 0 18px 16px;
   }
@@ -384,26 +287,10 @@
     margin-bottom: 18px;
   }
 
-  .nav__home_dark {
-    font-size: 16px;
-    width: 65px;
-    margin-top: 22px;
-    margin-bottom: 20px;
-  }
-
   .nav__saved {
     font-size: 16px;
     margin-left: 8px;
     margin-right: 8px;
-  }
-
-  .nav__saved_dark {
-    font-size: 16px;
-    margin: 25px 8px 17px;
-  }
-
-  .nav__underline-saved {
-    width: 140px;
   }
 
   .nav__profile {
@@ -418,12 +305,6 @@
     height: 48px;
     margin: 19px 16px 13px 0;
   }
-
-  .nav__profile_dark {
-    width: 112px;
-    height: 48px;
-    margin: 19px 16px 13px 0;
-  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 510px) {
@@ -432,16 +313,7 @@
     min-height: 56px;
   }
 
-  .nav__dark {
-    height: 56px;
-  }
-
   .nav__title {
-    font-size: 16px;
-    margin: 16px 16px;
-  }
-
-  .nav__title_dark {
     font-size: 16px;
     margin: 16px 16px;
   }
@@ -455,13 +327,6 @@
 
   .nav__mobile_hidden {
     display: none;
-  }
-
-  .nav__mobile-dark {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    display: flex;
   }
 
   .nav__button-container_hidden {
