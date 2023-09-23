@@ -1,13 +1,18 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import url("./vendor/normalize.css");
+@import url("./fonts/fonts.css");
+@import url("./components/App/App.css");
+@import url("./components/page/page.css");
+@import url("./components/Main/main.css");
+@import url("./components/Header/header.css");
+@import url("./components/Navigation/nav.css");
+@import url("./components/Search/search.css");
+@import url("./components/NewsCard/NewsCard.css");
+@import url("./components/SavedNews/SavedNews.css");
+@import url("./components/About/about.css");
+@import url("./components/Footer/footer.css");
+@import url("./components/Preloader/CirclePreloader.css");
+@import url("./components/MobileMenu/MobileMenu.css");
+@import url("./components/ModalWithForm/modal.css");
+/* * {
+  outline: 1px solid red;
+} */
