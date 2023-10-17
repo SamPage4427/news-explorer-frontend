@@ -29,12 +29,12 @@ import MobileContext from "../../contexts/MobileContext.js";
 // API
 import { getNews } from "../../utils/NewsApi.js";
 import * as auth from "../../utils/auth.js";
-import Api from "../../utils/api.js";
+import Api from "../../utils/MainApi.js";
 import KeywordsContext from "../../contexts/KeywordsContext";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
-  const [currentUser, setCurrentUser] = useState({}); //
+  const [currentUser, setCurrentUser] = useState({});
   const [searchResults, setSearchResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -101,6 +101,9 @@ function App() {
         setLoggedIn(true);
         setCurrentUser(data);
         handleCloseModal();
+      })
+      .catch((err) => {
+        console.error(`Error ${err} in signing in user`);
       });
   }
 
@@ -190,7 +193,12 @@ function App() {
                   <SavedCardsContext.Provider
                     value={{ savedCards, setSavedCards }}
                   >
-                    <KeywordsContext.Provider value={{ keyword, setKeyword }}>
+                    <KeywordsContext.Provider
+                      value={{
+                        keyword,
+                        setKeyword,
+                      }}
+                    >
                       <MobileContext.Provider
                         value={{
                           mobileMenuOpen,
@@ -204,7 +212,7 @@ function App() {
                           />
                         </Route>
                         <ProtectedRoute path="/saved-news">
-                          <SavedNews />
+                          <SavedNews onSignoutClick={handleSignout} />
                         </ProtectedRoute>
                         <Footer />
                         {activeModal === "signin" && (

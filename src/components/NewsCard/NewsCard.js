@@ -2,12 +2,14 @@ import { useContext, useState } from "react";
 import CurrentPageContext from "../../contexts/CurrentPageContext.js";
 import SavedCardsContext from "../../contexts/SavedCardsContext.js";
 import CurrentUserContext from "../../contexts/CurrentUserContext.js";
-import Api from "../../utils/api.js";
+import Api from "../../utils/MainApi.js";
 import KeywordsContext from "../../contexts/KeywordsContext.js";
+import SearchResultContext from "../../contexts/SearchResultsContext.js";
 
 function NewsCard({ newsItem }) {
   const { currentPage } = useContext(CurrentPageContext);
   const { savedCards, setSavedCards } = useContext(SavedCardsContext);
+  const { searchResults } = useContext(SearchResultContext);
   const { keyword } = useContext(KeywordsContext);
   const { isLoggedIn } = useContext(CurrentUserContext);
   const [hover, setHover] = useState(false);
@@ -27,29 +29,18 @@ function NewsCard({ newsItem }) {
     const token = localStorage.getItem("jwt");
     if (!savedCards.some((card) => card.link === newsItem.url)) {
       Api.saveNews(newsItem, token, keyword).then((data) => {
-        // debugger;
         setSavedCards([data.data, ...savedCards]);
       });
-    } else if (savedCards.some((card) => card.link === newsItem.url)) {
-      console.log("Article already saved");
-      window.alert("Article already saved");
     }
   };
 
   const handleDeleteCard = () => {
     const token = localStorage.getItem("jwt");
     Api.deleteSave(newsItem._id, token).then(() => {
-      // savedCards.splice(
-      //   savedCards.findIndex(
-      //     (card) => card.link === newsItem.link || card.link === newsItem.url
-      //   ),
-      //   1
-      // );
-      savedCards.filter((card) => {
-        // include card if card's id !== newsItem._id
-        if (card._id !== newsItem._id) {
-        }
+      const updateNewsArticles = savedCards.filter((article) => {
+        return article._id !== newsItem._id;
       });
+      setSavedCards(updateNewsArticles);
     });
   };
 
