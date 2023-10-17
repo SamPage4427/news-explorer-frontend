@@ -72,14 +72,14 @@
 }
 
 .modal__label:last-of-type {
-  margin-top: 31px;
+  margin-top: 13px;
 }
 
 .modal__input {
   width: 100%;
   padding: 0;
   border: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   color: #000;
   font-family: "Inter", Arial;
   font-size: 14px;
@@ -151,6 +151,16 @@
   cursor: pointer;
   margin-left: 36px;
   padding: 0;
+}
+
+.modal__error {
+  color: #f00;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 3px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
