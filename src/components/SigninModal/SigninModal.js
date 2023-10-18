@@ -3,19 +3,8 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm.js";
 import useFormWithValidation from "../../utils/useForm.js";
 
 function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  const { values, errors, handleChange, isValid, setIsValid, resetForm } =
-    useFormWithValidation();
-  const [isDisabled, setIsDisabled] = useState(false);
-
-  // const handleEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  // };
-
-  // const handlePasswordChange = (e) => {
-  //   setPassword(e.target.value);
-  // };
+  const { values, errors, handleChange, isValid, resetForm } =
+    useFormWithValidation({ email: "", password: "" });
 
   useEffect(() => {
     if (isOpen) {
@@ -23,20 +12,9 @@ function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    if (values.email === "" || values.password === "") {
-      setIsValid(false);
-    } else {
-      setIsValid(true);
-    }
-  }, [values.email, values.password]);
-
-  console.log(values);
-  console.log(errors);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSignin({ values });
+    onSignin(values);
   };
 
   return (
@@ -48,7 +26,7 @@ function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
       handleAltClick={onAltClick}
       buttonText="Sign in"
       altButtonText="Sign up"
-      isDisabled={isValid}
+      isDisabled={!isValid}
     >
       <label>
         <h3 className="modal__label">Email:</h3>
@@ -82,7 +60,6 @@ function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
       <span className="modal__error" id="password-input-error">
         {errors.password}
       </span>
-      <span className="modal__error" id="incorrect-info-error"></span>
     </ModalWithForm>
   );
 }

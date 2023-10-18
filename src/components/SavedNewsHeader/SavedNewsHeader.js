@@ -1,7 +1,7 @@
 import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 import SavedCardsContext from "../../contexts/SavedCardsContext.js";
 import Navigation from "../Navigation/Navigation.js";
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 
 function SavedNewsHeader({ onSignoutClick }) {
   const { savedCards } = useContext(SavedCardsContext);
@@ -28,8 +28,6 @@ function SavedNewsHeader({ onSignoutClick }) {
         }
       }
 
-      console.log(count);
-
       const savedKeywords = [];
       for (const item in count) {
         savedKeywords.push([item, count[item]]);
@@ -54,10 +52,6 @@ function SavedNewsHeader({ onSignoutClick }) {
   };
 
   const keywordsString = getKeywordString(keywordsArray);
-
-  // useEffect(() => {
-
-  // })
 
   return (
     <div className="saved-news__header">
