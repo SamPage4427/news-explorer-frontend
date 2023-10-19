@@ -4,12 +4,10 @@ import SavedCardsContext from "../../contexts/SavedCardsContext.js";
 import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 import Api from "../../utils/MainApi.js";
 import KeywordsContext from "../../contexts/KeywordsContext.js";
-import SearchResultContext from "../../contexts/SearchResultsContext.js";
 
 function NewsCard({ newsItem }) {
   const { currentPage } = useContext(CurrentPageContext);
   const { savedCards, setSavedCards } = useContext(SavedCardsContext);
-  const { searchResults } = useContext(SearchResultContext);
   const { keyword } = useContext(KeywordsContext);
   const { isLoggedIn } = useContext(CurrentUserContext);
   const [hover, setHover] = useState(false);

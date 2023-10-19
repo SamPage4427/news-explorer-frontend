@@ -19,7 +19,7 @@
     "lint": "npx eslint .",
     "lint:fix": "npx eslint --fix",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "scp -r ./build/* sampage4427@newsexplorer.online:/home/sampage4427/frontend"
   },
   "eslintConfig": {
     "extends": [
@@ -42,5 +42,5 @@
   "devDependencies": {
     "gh-pages": "^5.0.0"
   },
-  "homepage": "https://sampage4427.github.io/news-explorer-frontend"
+  "homepage": "https://www.newsexplorer.online"
 }
