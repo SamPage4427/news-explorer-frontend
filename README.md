@@ -8,3 +8,5 @@ The idea of the application is simple - we make a call to an API, which responds
 
 - [GitHub Repo](https://github.com/SamPage4427/news-explorer-frontend)
 - [GitHub Deployment](https://sampage4427.github.io/news-explorer-frontend)
+- [Deployment](https://www.newsexplorer.online)
+- [Backend Code](https://github.com/SamPage4427/news-explorer-backend)
