@@ -1,16 +1,19 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import NewsCard from "../NewsCard/NewsCard.js";
-// import SavedCardsContext from "../contexts/SavedCardsContext.js";
-import { newsOptions } from "../../utils/constants.js";
+import SavedCardsContext from "../../contexts/SavedCardsContext.js";
+import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 
 function SavedNewsCardList() {
-  // const { saveCards } = useContext(SavedCardsContext);
+  const { savedCards } = useContext(SavedCardsContext);
+  const { currentUser } = useContext(CurrentUserContext);
 
   return (
     <section className="saved-news__card">
       <div className="saved-news__card-container">
-        {newsOptions.map((news) => {
-          return <NewsCard key={news.url} newsItem={news} />;
+        {savedCards.map((news) => {
+          if (news.owner === currentUser?._id) {
+            return <NewsCard key={news.link} newsItem={news} />;
+          }
         })}
       </div>
     </section>

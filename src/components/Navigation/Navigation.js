@@ -10,6 +10,7 @@ function Navigation({ onSigninClick, onSignoutClick }) {
   const { currentPage, activeModal } = useContext(CurrentPageContext);
   const { currentUser, isLoggedIn } = useContext(CurrentUserContext);
   const { openMobileMenu } = useContext(MobileContext);
+
   return (
     <>
       {isLoggedIn && currentPage === "/" ? (
@@ -25,17 +26,25 @@ function Navigation({ onSigninClick, onSignoutClick }) {
           <div className="nav__button-container nav__button-container_hidden">
             <div className="nav__home-container">
               <NavLink to="/" className="nav__link">
-                <button className="nav__home">Home</button>
+                <button className="nav__home" type="button">
+                  Home
+                </button>
               </NavLink>
               <span className="nav__underline"></span>
             </div>
             <div className="nav__saved-container">
               <NavLink to="/saved-news" className="nav__link">
-                <button className="nav__saved">Saved Articles</button>
+                <button className="nav__saved" type="button">
+                  Saved Articles
+                </button>
               </NavLink>
             </div>
-            <button className="nav__profile-signed-in" onClick={onSignoutClick}>
-              <h2 className="nav__username">{currentUser}</h2>
+            <button
+              className="nav__profile-signed-in"
+              type="button"
+              onClick={onSignoutClick}
+            >
+              <h2 className="nav__username">{currentUser?.name}</h2>
               <img src={logout} className="nav__logout" alt="logout" />
             </button>
           </div>
@@ -53,12 +62,14 @@ function Navigation({ onSigninClick, onSignoutClick }) {
           <div className="saved-news__nav-button-container saved-news__nav-button-container_hidden">
             <div className="saved-news__nav-home-container">
               <NavLink to="/" className="saved-news__nav-link">
-                <button className="saved-news__nav-home">Home</button>
+                <button className="saved-news__nav-home" type="button">
+                  Home
+                </button>
               </NavLink>
             </div>
             <div className="saved-news__nav-saved-container">
               <NavLink to="/saved-news" className="saved-news__nav-link">
-                <button className="saved-news__nav-saved">
+                <button className="saved-news__nav-saved" type="button">
                   Saved Articles
                 </button>
               </NavLink>
@@ -66,9 +77,10 @@ function Navigation({ onSigninClick, onSignoutClick }) {
             </div>
             <button
               className="saved-news__nav-profile"
+              type="button"
               onClick={onSignoutClick}
             >
-              <h2 className="saved-news__nav-username">{currentUser}</h2>
+              <h2 className="saved-news__nav-username">{currentUser?.name}</h2>
               <img
                 src={logoutDark}
                 className="saved-news__nav-logout"
@@ -94,7 +106,9 @@ function Navigation({ onSigninClick, onSignoutClick }) {
           <div className="nav__button-container nav__button-container_hidden">
             <div className="nav__home-container">
               <NavLink to="/" className="nav__link">
-                <button className="nav__home">Home</button>
+                <button className="nav__home" type="button">
+                  Home
+                </button>
               </NavLink>
               <span className="nav__underline"></span>
             </div>

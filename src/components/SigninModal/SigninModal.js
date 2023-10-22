@@ -1,48 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.js";
+import { useFormWithValidation } from "../hooks/useForm.js";
 
 function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [isDisabled, setIsDisabled] = useState(false);
+  const { values, errors, handleChange, isValid, resetForm } =
+    useFormWithValidation({ email: "", password: "" });
 
   useEffect(() => {
     if (isOpen) {
-      setEmail("");
-      setPassword("");
+      resetForm();
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    if (email === "" || password === "") {
-      setIsDisabled(true);
-    } else {
-      setIsDisabled(false);
-    }
-  }, [email, password]);
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSignin({ email, password });
+    onSignin(values);
   };
 
   return (
     <ModalWithForm
+      name="signin"
       title="Sign In"
       onSubmit={handleSubmit}
       onClose={handleClose}
       handleAltClick={onAltClick}
       buttonText="Sign in"
       altButtonText="Sign up"
-      isDisabled={isDisabled}
+      isDisabled={!isValid}
     >
       <label>
         <h3 className="modal__label">Email:</h3>
@@ -51,25 +35,31 @@ function SigninModal({ isOpen, onSignin, handleClose, onAltClick }) {
           id="email-input"
           type="email"
           placeholder="Enter Email"
-          value={email}
-          onChange={handleEmailChange}
+          name="email"
+          value={values.email}
+          onChange={handleChange}
           required
         />
       </label>
-      <span className="modal__error" id="email-input-error"></span>
+      <span className="modal__error" id="email-input-error">
+        {errors.email}
+      </span>
       <label>
         <h3 className="modal__label">Password:</h3>
         <input
           className="modal__input"
           id="password-input"
-          type="text"
+          type="password"
           placeholder="Enter Password"
-          value={password}
-          onChange={handlePasswordChange}
+          name="password"
+          value={values.password}
+          onChange={handleChange}
           required
         />
       </label>
-      <span className="modal__error" id="password-input-error"></span>
+      <span className="modal__error" id="password-input-error">
+        {errors.password}
+      </span>
     </ModalWithForm>
   );
 }

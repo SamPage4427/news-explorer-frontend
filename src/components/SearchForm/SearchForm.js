@@ -1,25 +1,21 @@
 import { useState, useContext } from "react";
 import NewsSearchContext from "../../contexts/NewsSearchContext.js";
 import HasSearchedContext from "../../contexts/HasSearchedContext.js";
+import KeywordsContext from "../../contexts/KeywordsContext.js";
+import { useForm } from "../hooks/useForm.js";
 
 function SearchForm() {
   const { handleNewsSearch } = useContext(NewsSearchContext);
   const { setHasSearched } = useContext(HasSearchedContext);
-  const [searchInput, setSearchInput] = useState("");
-  const [keywords, setKeywords] = useState([]);
-
-  console.log(keywords);
+  const { setKeyword } = useContext(KeywordsContext);
+  const { values, setValues, handleChange } = useForm({ search: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleNewsSearch(searchInput);
+    handleNewsSearch(values.search);
     setHasSearched(true);
-    setKeywords(searchInput);
-    setSearchInput("");
-  };
-
-  const handleInputChange = (e) => {
-    setSearchInput(e.target.value);
+    setKeyword(values.search);
+    setValues({ search: "" });
   };
 
   return (
@@ -30,7 +26,9 @@ function SearchForm() {
         placeholder="Enter Topic"
         minLength={2}
         maxLength={30}
-        onChange={handleInputChange}
+        name="search"
+        value={values.search}
+        onChange={handleChange}
         required
       />
       <button className="search__button" type="submit">
