@@ -33,7 +33,6 @@ function NewsCard({ newsItem }) {
           setSavedCards([data.data, ...savedCards]);
           const savedId = data.data._id;
           const newItem = { ...newsItem, _id: savedId };
-          console.log(newItem);
           const newSearchResults = searchResults.map((article) =>
             article.url === newsItem.url ? newItem : article
           );
